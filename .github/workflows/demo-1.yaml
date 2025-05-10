@@ -19,4 +19,13 @@ jobs:
       - name: Run script
         run: |
           echo "Hello, world!"
+          sleep 7
           echo "This is a test of the GitHub Actions workflow."
+  aurevoir:
+    runs-on: ubuntu-latest
+    steps:
+      - name: say goodbye
+        run: |
+          echo "#### Waiting to say goodbye ####"
+          sleep 10
+          echo "Bye Bye!!!"
