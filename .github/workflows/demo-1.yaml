@@ -1,0 +1,22 @@
+name: TEST Demo
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+  Workflow_dispatch:
+
+jobs:
+  salutations:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run script
+        run: |
+          echo "Hello, world!"
+          echo "This is a test of the GitHub Actions workflow."
