@@ -1,0 +1,22 @@
+name: Generate ASCII Art
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  generate-ascii:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install the Cowsay package
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cowsay
+      - name: Generate ASCII art
+        run: |
+          echo "Generating ASCII art..."
+          cowsay -f dragon "Run for cover, I feel a sneeze coming on."
+          echo "ASCII art generated successfully."
