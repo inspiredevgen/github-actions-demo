@@ -2,6 +2,8 @@ echo "### Executing script: $0"
 
 mkdir -p /tmp/inspiredev/
 echo "### Downloading files to /tmp/inspiredev/ ###"
+cd /tmp/inspiredev/
+echo "### Downloading passwords.txt ###"
 wget https://mathcenter.oxford.emory.edu/site/math117/probSetAllTogether/words.txt
 
 mv words.txt passwords.txt
