@@ -23,6 +23,11 @@ jobs:
           echo "### Listing files ###"
           sleep 2
           ls -la /tmp/inspiredev/
+      - name: Uploading file
+        uses: actions/upload-artifact@v3
+        with:
+          name: password-file
+          path: /tmp/inspiredev/passwords.txt
 
   SearchPassword:
     runs-on: ubuntu-latest
@@ -30,6 +35,13 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: password-file
+          path: /tmp/inspiredev/passwords.txt
+
       - name: Search for Password file
         run: |
           echo "### Running Python script ###"
