@@ -13,7 +13,16 @@ jobs:
         run: |
           echo "#### Running bash script ####"
           chmod +x ./scripts/passwords.sh
+      - name: Run bash script
+        run: |
+          echo "### Running bash script ###"
+          sleep 2
           ./scripts/passwords.sh
+      - name: Listing files
+        run: |
+          echo "### Listing files ###"
+          sleep 2
+          ls -la /tmp/inspiredev/
       - name: Search for Password file
         run: |
           echo "### Running Python script ###"
