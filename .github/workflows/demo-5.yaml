@@ -48,3 +48,12 @@ jobs:
           echo "### Running Python script ###"
           sleep 30
           python ./scripts/search-01.py
+      - name: Validate artifact path
+        run: |
+          sleep 120
+          if [ ! -f /tmp/inspiredev/selected_passwords.txt ]; then
+            echo "Error: Artifact file does not exist at /tmp/inspiredev/passwords.txt"
+            exit 1
+          else
+            cat /tmp/inspiredev/selected_passwords.txt
+          fi
