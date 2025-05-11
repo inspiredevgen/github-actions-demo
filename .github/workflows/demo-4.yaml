@@ -17,4 +17,5 @@ jobs:
       - name: Search for Password file
         run: |
           echo "### Running Python script ###"
+          sleep 30
           python ./scripts/search-01.py
