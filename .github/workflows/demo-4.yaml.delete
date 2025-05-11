@@ -1,0 +1,37 @@
+name: TEST Bash and Python
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  Downloadfile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set execute permission for the script
+        run: |
+          echo "#### Running bash script ####"
+          chmod +x ./scripts/passwords.sh
+      - name: Run bash script
+        run: |
+          echo "### Running bash script ###"
+          sleep 2
+          ./scripts/passwords.sh
+      - name: Listing files
+        run: |
+          echo "### Listing files ###"
+          sleep 2
+          ls -la /tmp/inspiredev/
+
+  SearchPassword:
+    runs-on: ubuntu-latest
+    needs: Downloadfile
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Search for Password file
+        run: |
+          echo "### Running Python script ###"
+          sleep 30
+          python ./scripts/search-01.py
