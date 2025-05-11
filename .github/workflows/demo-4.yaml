@@ -1,0 +1,20 @@
+name: TEST Bash and Python
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  Download file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set execute permission for the script
+        run: |
+          echo "#### Running bash script ####"
+          chmod +x ./scripts/passwords.sh
+          ./scripts/passwords.sh
+      - name: Search for Password file
+        run: |
+          echo "### Running Python script ###"
+          python ./scripts/search-01.py
