@@ -15,3 +15,9 @@ jobs:
           echo "##### Listing /tmp directory ####"
           ls -l /tmp
           echo "Listing completed!"
+
+      - name: Display README.md content
+        run: |
+          echo "##### Displaying README.md content ####"
+          cat README.md
+          echo "README.md content displayed!"
