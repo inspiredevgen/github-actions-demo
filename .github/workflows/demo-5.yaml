@@ -18,11 +18,12 @@ jobs:
           echo "### Running bash script ###"
           sleep 2
           ./scripts/passwords.sh
-      - name: Listing files
+      - name: Validate artifact path
         run: |
-          echo "### Listing files ###"
-          sleep 2
-          ls -la /tmp/inspiredev/
+          if [ ! -f /tmp/inspiredev/passwords.txt ]; then
+            echo "Error: Artifact file does not exist at /tmp/inspiredev/passwords.txt"
+            exit 1
+          fi
       - name: Uploading file
         uses: actions/upload-artifact@v3
         with:
