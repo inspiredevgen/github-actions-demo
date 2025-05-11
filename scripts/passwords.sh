@@ -7,6 +7,6 @@ wget https://mathcenter.oxford.emory.edu/site/math117/probSetAllTogether/words.t
 mv words.txt password.txt
 echo "### Downloading complete ###"
 echo "### Starting to process the file ###"
-echo "### File content: ###"
-cat password.txt
+echo "### password with the word inspire ###"
+cat password.txt | grep -i inspire
 echo "### File content complete ###"
