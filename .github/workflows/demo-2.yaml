@@ -16,6 +16,10 @@ jobs:
           ls -l /tmp
           echo "Listing completed!"
 
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: Display README.md content
         run: |
           echo "##### Displaying README.md content ####"
