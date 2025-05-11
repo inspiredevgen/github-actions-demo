@@ -1,0 +1,17 @@
+name: Demo 2
+on: push
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run demo-2 script
+        run: |
+          echo "##### Running demo-2 script ####"
+          # Add your demo-2 script commands here
+          echo "Demo 2 completed successfully!"
+
+      - name: Listing /tmp directory
+        run: |
+          echo "##### Listing /tmp directory ####"
+          ls -l /tmp
+          echo "Listing completed!"
