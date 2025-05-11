@@ -1,5 +1,6 @@
 import os
 sourceFile = "/tmp/inspiredev/passwords.txt"
+destinationFile = "/tmp/inspiredev/selected_passwords.txt"
 selectedPass = []
 
 if os.path.isfile(sourceFile):
@@ -14,5 +15,6 @@ if os.path.isfile(sourceFile):
 else:
     print(f"File {sourceFile} does not exist.")
 
-for password in selectedPass:
-    print(password)
+with open(destinationFile, "w") as file:
+    for password in selectedPass:
+        file.write(password + "\n")
