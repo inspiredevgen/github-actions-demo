@@ -2,7 +2,7 @@ import os
 sourceFile = "/tmp/inspiredev/passwords.txt"
 selectedPass = []
 
-if os.path.exists(sourceFile):
+if os.path.isfile(sourceFile):
     print(f"File {sourceFile} exists.")
     with open(sourceFile, "r") as file:
         for line in file:
